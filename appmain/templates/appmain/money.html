@@ -2,52 +2,64 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div id="chart"></div>
-                <script>
-                    $(function () {
-                        $("#chart").shieldChart({
-                            theme: "light",
-                            seriesSettings: {
-                                line: {
-                                    dataPointText: { enabled: true }
-                                    }
-                                },
-                            chartLegend: {
-                                align: 'center',
-                                borderRadius: 2,
-                                borderWidth: 2,
-                                verticalAlign: 'top'
-                             },
-                            exportOptions: {
-                                image: true,
-                                print: true
-                             },
-                             axisX: {
-                             categoricalValues: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016']
-                             },
-                            axisY: {
-                                title: {
-                                text: "Цена (€ за kWh)"
-                                }
-                             },
-                            primaryHeader: {
-                                text: "Цены на электроэнергию"
-                            },
-                            dataSeries: [{
-                                seriesType: 'line',
-                                collectionAlias: 'Домохозяйство',
-                                data: [0.164, 0.173, 0.184, 0.114, 0.273, 0.384, 0.464, 0.123, 0.112, 0.124, 0.1, 0.17]},
-                                {
-                                 seriesType: 'line',
-                                 collectionAlias: 'Индустрия',
-                                 data: [0.342, 0.127, 0.321, 0.567, 0.324, 0.543, 0.342, 0.435, 0.564, 0.342, 0.234, 0.564]
-                                 }]
-                            });
-                        });
-                </script>
-        </div><!-- /.col-md-8 col-md-offset-2 -->
-    </div><!-- /.row -->
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+
+<!-- График --><div id="chart">
+
+<script>
+ $(function () {
+ $("#chart").shieldChart({
+ theme: "light",
+ exportOptions: {
+ image: false,
+ print: false
+ },
+ axisX: {
+ categoricalValues: ['Минск', 'Брест', 'Гродно', 'Гомель', 'Витебск', 'Могилев']
+ },
+ axisY: {
+ axisTickText: {
+ format: "{text}"
+ },
+ title: {
+ text: "Курс USD(в BYR)"
+ }
+ },
+ tooltipSettings: {
+ chartBound: true
+ },
+ seriesSettings: {
+ line: {
+ enablePointSelection: true,
+ pointMark: {
+ activeSettings: {
+ pointSelectedState: {
+ drawWidth: 4,
+ drawRadius: 4
+ }
+ }
+ }
+ }
+ },
+ primaryHeader: {
+ text: "Курс Беларусбанка покупки и продажи доллара в областных городах"
+ },
+ dataSeries: [{
+ seriesType: 'line',
+ collectionAlias: 'Покупка USD',
+ data: [2.155, 2.15, 2.145, 2.145, 2.14, 2.144]
+ }, {
+ seriesType: 'line',
+ collectionAlias: 'Продажа USD',
+ data: [2.173, 2.168, 2.167, 2.185, 2.177, 2.179]
+ }]
+ });
+ });
+ </script><!-- /.График -->
+
+</div>
+</div><!-- /.col-md-8 col-md-offset-2 -->
+</div><!-- /.row -->
 </div><!-- /.container -->
 {% endblock %}

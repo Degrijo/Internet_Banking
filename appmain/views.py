@@ -3,10 +3,10 @@ import requests
 
 
 def view_home(request):
-    return render(request, 'appmain/home.html')
+    return render(request, 'appmain/wrapper.html')
 
 
 def course_of_money(request):
-    r = requests.post("https://belarusbank.by/api/kursExchange", data={"city": "Minsk"})
-    return render(request, 'templates/appmain/money.html')
+    # r = requests.post("https://belarusbank.by/api/kursExchange", data={"city": "Minsk"})
+    return render(request, 'appmain/money.html')
  # {"values": r.text}
