@@ -1,0 +1,63 @@
+{% extends "appmain/wrapper.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div id="chart">
+<script>
+ $(function () {
+ $("#chart").shieldChart({
+ theme: "light",
+ exportOptions: {
+ image: false,
+ print: false
+ },
+ axisX: {
+ categoricalValues: ['Minsk', 'Brest', 'Grodno', 'Gomel', 'Vitebsk', 'Mogilev']
+ },
+ axisY: {
+ axisTickText: {
+ format: "{text}"
+ },
+ title: {
+ text: "USD rate(in BYR)"
+ }
+ },
+ tooltipSettings: {
+ chartBound: true
+ },
+ seriesSettings: {
+ line: {
+ enablePointSelection: true,
+ pointMark: {
+ activeSettings: {
+ pointSelectedState: {
+ drawWidth: 4,
+ drawRadius: 4
+ }
+ }
+ }
+ }
+ },
+ primaryHeader: {
+ text: "Buying and selling rate of Belarusbank in reqional towns"
+ },
+ dataSeries: [{
+ seriesType: 'line',
+ collectionAlias: 'Buying USD',
+ data: [2.155, 2.15, 2.145, 2.145, 2.14, 2.144]
+ }, {
+ seriesType: 'line',
+ collectionAlias: 'Selling USD',
+ data: [2.173, 2.168, 2.167, 2.185, 2.177, 2.179]
+ }]
+ });
+ });
+ </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
