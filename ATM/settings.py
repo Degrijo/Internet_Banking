@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'appmain',
     'news',
     'rate',
+    'mytransactions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ATM.wsgi.application'
 
+AUTH_USER_MODEL = 'mytransactions.User'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

@@ -3,7 +3,6 @@ import requests
 
 
 def course_of_money(request):
-    print(getting_inf())
     return render(request, 'rate/rate.html', getting_inf())
 
 
