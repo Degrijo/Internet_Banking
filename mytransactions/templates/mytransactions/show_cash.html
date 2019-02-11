@@ -1,0 +1,16 @@
+{% extends "appmain/wrapper.html" %}
+
+{% block content %}
+    <div class="col-sm-2">
+        <ul class="nav nav-left">
+            <li class="active"><a href="crediting_yourself/">Сrediting yourself</a></li>
+            <li class="active"><a href="money_transfer/">Money transfer</a></li>
+            <li class="active"><a href="#">Show cash</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-10">
+        <h4>Your id is {{user.id}}<br>
+            Your cash is {{user.money}}</h4>
+    </div>
+</div>
+{% endblock %}

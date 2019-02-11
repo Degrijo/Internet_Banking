@@ -5,57 +5,71 @@
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=
         constructor%3Abcfe5cb486fd07151706c1e74d5f2148b7ed8c42e5b865d35f12e0b6bd424e46&amp;width=1100&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
 
-    <!--<div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Towns<span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Minsk</a></li>
-            <li><a href="#">Brest</a></li>
-            <li><a href="#">Grodno</a></li>
-            <li><a href="#">Gomel</a></li>
-            <li><a href="#">Vitebsk</a></li>
-            <li><a href="#">Mogilev</a></li>
-        </ul>
-    </div>-->
-
+        <div class="col-sm-3">
         <ul>
-            <li>Минск</li>
+        <li>Минск</li>
             <ul>
-            {% for atm in {{Минск}} %}
-                <li>{{atm}}</li>
-            {% endfor %}
-            </ul>
-            <li>Брест</li>
-            <ul>
-            {% for atm in {{Брест}} %}
-                <li>{{atm}}</li>
-            {% endfor %}
-            </ul>
-            <li>Гродно</li>
-            <ul>
-            {% for atm in {{Гродно}} %}
-                <li>{{atm}}</li>
-            {% endfor %}
-            </ul>
-            <li>Гомель</li>
-            <ul>
-            {% for atm in {{Гомель}} %}
+            {% for atm in Минск %}
                 <li>{{atm}}</li>
             {% endfor %}
             </ul>
         </ul>
+        </div>
+
+        <div class="col-sm-3">
+        <ul>
+        <li>Брест</li>
+            <ul>
+            {% for atm in Брест %}
+                <li>{{atm}}</li>
+            {% endfor %}
+            </ul>
+            </ul>
+        </div>
+
+        <div class="col-sm-3">
+        <ul>
+        <li>Гродно</li>
+            <ul>
+            {% for atm in Гродно %}
+                <li>{{atm}}</li>
+            {% endfor %}
+            </ul>
+            </ul>
+        </div>
+
+        <div class="col-sm-3">
+        <ul>
+        <li>Гомель</li>
+            <ul>
+            {% for atm in Гомель %}
+                <li>{{atm}}</li>
+            {% endfor %}
+            </ul>
+            </ul>
+        </div>
+
+        <div class="col-sm-3">
+        <ul>
         <li>Витебск</li>
             <ul>
-            {% for atm in {{Витебск}} %}
+            {% for atm in Витебск %}
                 <li>{{atm}}</li>
             {% endfor %}
             </ul>
+            </ul>
+        </div>
+
+        <div class="col-sm-3">
+        <ul>
         <li>Могилев</li>
             <ul>
-            {% for atm in {{Могилев}} %}
+            {% for atm in Могилев %}
                 <li>{{atm}}</li>
             {% endfor %}
             </ul>
+            </ul>
+        </div>
+
     </div>
     {% endblock %}

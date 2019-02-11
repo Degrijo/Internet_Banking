@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,6 +34,7 @@ INSTALLED_APPS = [
     'news',
     'rate',
     'mytransactions',
+    'map',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -3,12 +3,13 @@
 {% block content %}
     <div class="col-sm-2">
         <ul class="nav nav-left">
-            <li class="active"><a href="#">Сrediting yourself</a></li>
+            <li class="active"><a href="../crediting_yourself">Сrediting yourself</a></li>
             <li class="active"><a href="#">Money transfer</a></li>
+            <li class="active"><a href="../">Show cash</a></li>
         </ul>
     </div>
     <div class="col-sm-10">
-    <form class="form-horizontal" action="/mytransactions/upd_mon" method="post">
+    <form class="form-horizontal" action="/show_money/money_transfer/submit_transfer" method="post">
         {% csrf_token %}
   <div class="form-group">
     <label class="control-label col-sm-2">ID:</label>

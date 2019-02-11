@@ -3,7 +3,6 @@ import requests
 
 
 def view_map(request):
-    print(get_atms())
     return render(request, 'map/map.html', get_atms())
 
 
