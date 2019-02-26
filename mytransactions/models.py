@@ -9,9 +9,3 @@ class User(AbstractUser):
     def update_money(self, money):
         self.money += money
         self.save()
-
-
-class MoneyForm(ModelForm):
-    class Meta:
-        model = User
-        fields = ['id', 'money']

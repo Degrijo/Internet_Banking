@@ -38,12 +38,11 @@
         <li><a href="../../show_money/">My Transactions</a></li>
         <li><a href="../../map/">ATMs in map</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+        <form class="navbar-form navbar-right">
+            <input type="button" class="btn btn-success" value="Log in" onClick='location.href="../../reg/log_in/"'>
+            <input type="button" class="btn btn-primary" value="Register on" onClick='location.href="../../reg/"'>
+            <input type="button" class="btn btn-active" value="Log out" onClick='location.href="../../reg/log_out/"'>
+        </form>
     </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -52,8 +51,8 @@
   	<div class="jumbotron">
   		<div class="container">
 		 <h3>This project is my first web project. It builds on the Django technology in backend and Bootstrap technology in frontend.
-             Project has 5 applications: main, map, news, mytransactions and rate. ATM (it's just a name, because it's
-             more like with internet-banking) use sqlite3 database and 2 models, 1 form in it.
+             Project has 6 applications: main, map, news, mytransactions, registration and rate. ATM (it's just a name, because it's
+             more like with internet-banking) use sqlite3 database and 2 models, 2 form in it.
              The first model is overrided standart User model (was added IntegerField for cash and some methods). The second is article model for news.
              Form is based on the user model. There are 3 APIs in this project: 2 Belarusbank (location of the ATMs and
              rate in reqional towns) and 1 Yandex (map of Belarus).

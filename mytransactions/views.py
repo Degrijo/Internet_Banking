@@ -3,15 +3,24 @@ from .models import User
 
 
 def crediting_yourself(request):
-    return render(request, 'mytransactions/crediting_yourself.html')
+    if request.user.is_authenticated:
+        return render(request, 'mytransactions/crediting_yourself.html')
+    else:
+        return render(request, 'mytransactions/not_loged_in.html')
 
 
 def money_transfer(request):
-    return render(request, 'mytransactions/money_transfer.html')
+    if request.user.is_authenticated:
+        return render(request, 'mytransactions/money_transfer.html')
+    else:
+        return render(request, 'mytransactions/not_loged_in.html')
 
 
 def show_money(request):
-    return render(request, 'mytransactions/show_cash.html')
+    if request.user.is_authenticated:
+        return render(request, 'mytransactions/show_cash.html')
+    else:
+        return render(request, 'mytransactions/not_loged_in.html')
 
 
 def submit_transfer(request):
