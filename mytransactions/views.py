@@ -25,7 +25,7 @@ def show_money(request):
 
 def submit_transfer(request):
     user = request.user
-    try:
+    if User.objects.get(id=request.POST['id']) is not None:
         getter = User.objects.get(id=request.POST['id'])
         if getter.id != user.id:
             if user.money >= int(request.POST['money']):
@@ -36,7 +36,7 @@ def submit_transfer(request):
                 rezult = "You don't have enough money"
         else:
             rezult = "Recipient and sender is one person. Use 'Crediting yourself'"
-    except:
+    else:
         rezult = "User with such id doesn't exist"
     return render(request, "mytransactions/submit_transfer.html", {"rezult": rezult})
 

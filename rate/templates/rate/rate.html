@@ -1,63 +1,63 @@
 {% extends "appmain/wrapper.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div id="chart">
-<script>
- $(function () {
- $("#chart").shieldChart({
- theme: "light",
- exportOptions: {
- image: false,
- print: false
- },
- axisX: {
- categoricalValues: ['Minsk', 'Brest', 'Grodno', 'Gomel', 'Vitebsk', 'Mogilev']
- },
- axisY: {
- axisTickText: {
- format: "{text}"
- },
- title: {
- text: "USD rate(in BYR)"
- }
- },
- tooltipSettings: {
- chartBound: true
- },
- seriesSettings: {
- line: {
- enablePointSelection: true,
- pointMark: {
- activeSettings: {
- pointSelectedState: {
- drawWidth: 4,
- drawRadius: 4
- }
- }
- }
- }
- },
- primaryHeader: {
- text: "Buying and selling rate of Belarusbank in reqional towns"
- },
- dataSeries: [{
- seriesType: 'line',
- collectionAlias: 'Buying USD',
- data: [ {{Минск_in}}, {{Брест_in}}, {{Гродно_in}}, {{Гомель_in}}, {{Витебск_in}}, {{Могилев_in}} ]
- }, {
- seriesType: 'line',
- collectionAlias: 'Selling USD',
- data: [ {{Минск_out}}, {{Брест_out}}, {{Гродно_out}}, {{Гомель_out}}, {{Витебск_out}}, {{Могилев_out}} ]
- }]
- });
- });
- </script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div id="chart">
+                <script>
+                        $(function () {
+                            $("#chart").shieldChart({
+                                theme: "light",
+                                exportOptions: {
+                                    image: false,
+                                    print: false
+                                },
+                                axisX: {
+                                    categoricalValues: ['Minsk', 'Brest', 'Grodno', 'Gomel', 'Vitebsk', 'Mogilev']
+                                },
+                                axisY: {
+                                    axisTickText: {
+                                        format: "{text}"
+                                    },
+                                    title: {
+                                        text: "USD rate(in BYR)"
+                                    }
+                                },
+                                tooltipSettings: {
+                                    chartBound: true
+                                },
+                                seriesSettings: {
+                                    line: {
+                                        enablePointSelection: true,
+                                        pointMark: {
+                                            activeSettings: {
+                                                pointSelectedState: {
+                                                    drawWidth: 4,
+                                                    drawRadius: 4
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                primaryHeader: {
+                                    text: "Buying and selling rate of Belarusbank in reqional towns"
+                                },
+                                dataSeries: [{
+                                    seriesType: 'line',
+                                    collectionAlias: 'Buying USD',
+                                    data: [ {{Минск_in}}, {{Брест_in}}, {{Гродно_in}}, {{Гомель_in}}, {{Витебск_in}}, {{Могилев_in}} ]
+                                }, {
+                                    seriesType: 'line',
+                                    collectionAlias: 'Selling USD',
+                                    data: [ {{Минск_out}}, {{Брест_out}}, {{Гродно_out}}, {{Гомель_out}}, {{Витебск_out}}, {{Могилев_out}} ]
+                                }]
+                            });
+                        });
 
-                </div>
+                </script>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

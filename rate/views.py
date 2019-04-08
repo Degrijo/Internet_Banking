@@ -12,11 +12,15 @@ def getting_inf():
     for dic in r:
         if dic["name"] in ["Минск", "Гродно", "Гомель", "Витебск", "Брест", "Могилев"]:
             if dic["name"]+"_in" in rate.keys():
-                if float(dic["USD_in"]) < rate[dic["name"]+"_in"]:
-                    rate[dic["name"]+"_in"] = float(dic["USD_in"])
-                if float(dic["USD_out"]) > rate[dic["name"]+"_out"]:
-                    rate[dic["name"]+"_out"] = float(dic["USD_out"])
+                if dic["USD_in"] != "0.0000":
+                    if float(dic["USD_in"]) < rate[dic["name"]+"_in"]:
+                        rate[dic["name"]+"_in"] = float(dic["USD_in"])
+                if dic["USD_out"] != "0.0000":
+                    if float(dic["USD_out"]) > rate[dic["name"]+"_out"]:
+                        rate[dic["name"]+"_out"] = float(dic["USD_out"])
             else:
-                rate.setdefault(dic["name"]+"_in", float(dic["USD_in"]))
-                rate.setdefault(dic["name"]+"_out", float(dic["USD_out"]))
+                if dic["USD_in"] != "0.0000":
+                    rate.setdefault(dic["name"]+"_in", float(dic["USD_in"]))
+                if dic["USD_out"] != "0.0000":
+                    rate.setdefault(dic["name"]+"_out", float(dic["USD_out"]))
     return rate
