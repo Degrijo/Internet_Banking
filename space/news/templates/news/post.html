@@ -1,0 +1,10 @@
+{% extends "appmain/wrapper.html" %}
+
+{% block content %}
+    <div class="container">
+        <h3 align="center">{{article_view.title}}</h3>
+        <p>{{article_view.text}}</p>
+        <h4>Published {{article_view.date|date:"d-m-Y в H-i-s"}}</h4>
+        <footer><h4>by {{article_view.author}}</h4></footer>
+    </div>
+{% endblock %}
